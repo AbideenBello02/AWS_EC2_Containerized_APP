@@ -1,0 +1,5 @@
+.DS_Store
+KEY/
+terraform.tfstate
+terraform.tfstate.backup
+.terraform/
