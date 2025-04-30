@@ -62,14 +62,12 @@ resource "aws_instance" "node_app_instance" {
   key_name               = aws_key_pair.node_app_key.key_name
   vpc_security_group_ids = [aws_security_group.node_app_sg.id]
   subnet_id              = aws_subnet.node_app_subnet.id
-  # iam_instance_profile = aws_iam_instance_profile.node_app_profile.name
 
   tags = {
     Name = "NodeApp_Instance"
   }
 
 }
-
 
 resource "null_resource" "docker_install" {
   depends_on = [aws_instance.node_app_instance]
